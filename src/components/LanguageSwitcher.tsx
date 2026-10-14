@@ -18,10 +18,10 @@ export function LanguageSwitcher() {
     <button
       type="button"
       onClick={toggleLanguage}
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-border hover:border-brand-petrol-accent/50 bg-brand-surface/70 hover:bg-brand-surface transition-all text-sm font-medium text-white group cursor-pointer"
+      className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg border border-brand-border hover:border-brand-petrol-accent/50 bg-brand-surface/70 hover:bg-brand-surface transition-all text-xs sm:text-sm font-medium text-white group cursor-pointer shrink-0"
       aria-label="Toggle language between English and Arabic"
     >
-      <Globe className="w-4 h-4 text-brand-petrol-accent transition-transform group-hover:rotate-45" />
+      <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-petrol-accent transition-transform group-hover:rotate-45 shrink-0" />
       <span>{locale === 'en' ? 'العربية' : 'English'}</span>
     </button>
   );

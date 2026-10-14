@@ -76,14 +76,14 @@ export function DentalCrownScene({ className = '' }: DentalCrownSceneProps) {
   return (
     <div
       data-r3f-mount-point="dental-crown-canvas"
-      className={`relative w-full aspect-square max-w-[560px] mx-auto rounded-3xl border border-brand-border/80 bg-gradient-to-b from-brand-surface/90 via-brand-surface/40 to-brand-canvas-dark/95 backdrop-blur-md overflow-hidden flex flex-col items-center justify-between p-5 sm:p-7 shadow-2xl shadow-black/50 group ${className}`}
+      className={`relative w-full aspect-square max-w-[560px] mx-auto rounded-2xl sm:rounded-3xl border border-brand-border/80 bg-gradient-to-b from-brand-surface/90 via-brand-surface/40 to-brand-canvas-dark/95 backdrop-blur-md overflow-hidden flex flex-col items-center justify-between p-4 sm:p-7 shadow-2xl shadow-black/50 group ${className}`}
     >
       {/* Atmospheric Brand Rim-Lighting behind the 3D Crown */}
       <div className="absolute w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-brand-petrol-accent/15 blur-[100px] pointer-events-none animate-pulse-glow" />
       <div className="absolute w-56 h-56 rounded-full bg-[#023140]/70 blur-[70px] pointer-events-none" />
 
       {/* Top Viewport Header */}
-      <div className="relative z-10 w-full flex items-center justify-between">
+      <div className="relative z-10 w-full flex items-center justify-between gap-2 flex-wrap sm:flex-nowrap">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-petrol-accent/10 border border-brand-petrol-accent/25 text-brand-petrol-accent text-[11px] font-semibold tracking-wide">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{t('badge')}</span>

@@ -2,13 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Menu, X, Lock, ExternalLink } from 'lucide-react';
 
 export function Navbar() {
   const t = useTranslations();
+  const locale = useLocale();
+  const isArabic = locale === 'ar';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -37,26 +39,23 @@ export function Navbar() {
           : 'bg-brand-canvas-dark/70 backdrop-blur-sm border-brand-border/60'
       }`}
     >
-      <div className="site-container h-20 flex items-center justify-between">
+      <div className="site-container h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo & Name */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
-          <div className="w-20 h-20 rounded-xl p-1 border border-transparent flex items-center justify-center transition-all duration-300 overflow-hidden shrink-0">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl p-0.5 sm:p-1 border border-transparent flex items-center justify-center transition-all duration-300 overflow-hidden shrink-0">
             <Image
               src="/images/logos/premier-logo.png"
               alt="Premier Dental Lab Logo"
-              width={60}
-              height={60}
-              className="object-contain"
+              width={48}
+              height={48}
+              className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
               priority
             />
           </div>
-          <div>
-            <div className="text-base sm:text-lg font-bold tracking-wider text-white uppercase group-hover:text-brand-petrol-accent transition-colors duration-200">
+          <div className="hidden sm:block">
+            <div className="text-sm sm:text-base lg:text-lg font-bold tracking-wider text-white uppercase group-hover:text-brand-petrol-accent transition-colors duration-200 leading-tight">
               Premier Dental Lab
             </div>
-            {/* <div className="text-[10px] tracking-widest uppercase text-brand-muted font-medium">
-              Erbil, Iraq • Digital Dentistry
-            </div> */}
           </div>
         </Link>
 
@@ -117,6 +116,27 @@ export function Navbar() {
       {/* Mobile Menu Dropdown / Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-brand-border bg-brand-canvas-dark/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-3 animate-fade-in-up">
+          {/* Mobile Drawer Brand Identity */}
+          <div className="flex items-center gap-3 pb-3 mb-1 border-b border-brand-border/60">
+            <div className="w-10 h-10 rounded-xl bg-brand-surface p-1 border border-brand-border/80 flex items-center justify-center shrink-0">
+              <Image
+                src="/images/logos/premier-logo.png"
+                alt="Premier Dental Lab Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white uppercase tracking-wider">
+                Premier Dental Lab
+              </div>
+              <div className="text-[11px] text-brand-muted">
+                {isArabic ? 'أربيل، العراق • طب الأسنان الرقمي' : 'Erbil, Iraq • Digital Dentistry'}
+              </div>
+            </div>
+          </div>
+
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <a

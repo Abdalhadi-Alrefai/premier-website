@@ -318,9 +318,9 @@ export function TechnologySection({
             MOBILE & TABLET WORKFLOW TIMELINE (Vertical Layout: < lg)
             ======================================================== */}
         <div className="block lg:hidden">
-          <div className="relative start-0 space-y-6 sm:space-y-8 ps-2 sm:ps-4">
+          <div className="relative start-0 space-y-4 sm:space-y-8 ps-0 sm:ps-4">
             {/* Continuous Vertical Timeline Line */}
-            <div className="absolute top-4 bottom-4 start-7 sm:start-9 w-0.5 bg-gradient-to-b from-brand-petrol-accent via-brand-petrol-accent/50 to-brand-border/60" />
+            <div className="absolute top-4 bottom-4 start-5 sm:start-9 w-0.5 bg-gradient-to-b from-brand-petrol-accent via-brand-petrol-accent/50 to-brand-border/60" />
 
             {activeSteps.map((step, index) => {
               const IconComponent = ICON_MAP[step.icon] || Scan;
@@ -330,28 +330,28 @@ export function TechnologySection({
                 <div
                   key={step.id}
                   onClick={() => setActiveStepIndex(index)}
-                  className="relative flex items-start gap-4 sm:gap-6 group cursor-pointer"
+                  className="relative flex items-start gap-3 sm:gap-6 group cursor-pointer"
                 >
                   {/* Vertical Node Indicator */}
                   <div
-                    className={`relative z-10 w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    className={`relative z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                       isActive
                         ? 'bg-brand-surface-elevated border-2 border-brand-petrol-accent text-brand-petrol-accent shadow-[0_0_20px_rgba(34,166,191,0.35)] scale-105'
                         : 'bg-brand-surface border border-brand-border text-brand-muted group-hover:border-brand-petrol-accent/40'
                     }`}
                   >
-                    <IconComponent className="w-5 h-5 stroke-[1.8]" />
+                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.8]" />
                   </div>
 
                   {/* Stage Card */}
                   <div
-                    className={`flex-1 p-5 sm:p-6 rounded-2xl transition-all duration-300 ${
+                    className={`flex-1 p-4 sm:p-6 rounded-2xl transition-all duration-300 ${
                       isActive
                         ? 'bg-gradient-to-b from-brand-surface-elevated via-brand-surface to-brand-canvas-dark border border-brand-petrol-accent shadow-lg shadow-brand-petrol-accent/5'
                         : 'bg-brand-surface/70 border border-brand-border group-hover:border-brand-border/90'
                     }`}
                   >
-                    <div className="flex items-center justify-between gap-2 mb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 mb-2">
                       <span className="text-[11px] font-mono tracking-wider font-semibold text-brand-petrol-accent">
                         {t(`steps.${step.id}.tag`)}
                       </span>

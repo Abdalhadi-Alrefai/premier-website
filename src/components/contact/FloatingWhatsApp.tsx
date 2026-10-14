@@ -50,9 +50,9 @@ export function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t('floatingWhatsApp')}
-        className="fixed z-40 bottom-6 end-6 flex items-center gap-2.5 p-3.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xl shadow-emerald-950/40 border border-emerald-400/30 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all duration-300 group cursor-pointer"
+        className="fixed z-40 bottom-5 end-4 sm:bottom-6 sm:end-6 flex items-center gap-2 sm:gap-2.5 p-3 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xl shadow-emerald-950/40 border border-emerald-400/30 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-all duration-300 group cursor-pointer"
         style={{
-          bottom: 'max(1.5rem, calc(1rem + env(safe-area-inset-bottom)))',
+          bottom: 'max(1.25rem, calc(0.75rem + env(safe-area-inset-bottom)))',
         }}
       >
         <div className="relative">
