@@ -2,6 +2,7 @@
   "name": "@premier/website",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
@@ -10,8 +11,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@premier/config": "workspace:*",
-    "@premier/shared-types": "workspace:*",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "lucide-react": "^0.475.0",
