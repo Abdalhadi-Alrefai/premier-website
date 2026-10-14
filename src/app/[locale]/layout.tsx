@@ -157,11 +157,9 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="relative min-h-screen flex flex-col bg-mesh-grid">  
-
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
-            
             <FloatingWhatsApp />
           </div>
         </NextIntlClientProvider>
